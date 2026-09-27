@@ -1,32 +1,13 @@
-# React + TypeScript + Vite
+# SajiloBuild
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+SajiloBuild is an AI-powered software builder that turns natural language ideas into real websites, web applications, SaaS products, and business tools. Instead of starting with complex code and technical setup, users can describe what they want to build and use AI to transform their idea into a working software project.
 
-Currently, two official plugins are available:
+The platform is designed to make software development simpler and more accessible while still providing developers with the ability to customize, test, improve, and grow their projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+SajiloBuild is being built with React, TypeScript, Vite, and Tailwind CSS on the frontend. The project is designed with a production-ready architecture that can later support AI-powered code generation, project management, live previews, database integration, authentication, testing, deployment, and other software development workflows.
 
-## React Compiler
+The core workflow is simple: describe an idea, let SajiloBuild understand the requirements, generate the project, preview the result, make changes through natural language, test the application, and eventually deploy it.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SajiloBuild is currently under active development. The project will be developed incrementally, starting with the frontend experience and gradually introducing the backend, AI agent system, project workspace, code generation, preview environment, authentication, databases, and deployment infrastructure.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The long-term goal is to build a complete AI software development platform where anyone can go from an idea to a working software product without needing to manually handle every part of the development process.
