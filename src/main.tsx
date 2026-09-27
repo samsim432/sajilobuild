@@ -8,7 +8,7 @@ const rootElement = document.getElementById("root");
 
 if (!rootElement) {
   throw new Error(
-    "SajiloBuild: Root element was not found."
+    "SajiloBuild: Root element was not found.",
   );
 }
 

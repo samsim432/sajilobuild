@@ -1,33 +1,71 @@
-import Navbar from "./components/layout/Navbar";
-import Hero from "./components/landing/Hero";
-import ExamplePrompts from "./components/landing/ExamplePrompts";
-import BuildCategories from "./components/landing/BuildCategories";
-import HowItWorks from "./components/landing/HowItWorks";
-import Features from "./components/landing/Features";
-import FinalCTA from "./components/landing/FinalCTA";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { AuthProvider } from "./auth/AuthProvider";
+import ProtectedRoute from "./auth/ProtectedRoute";
+
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
+import Templates from "./pages/Templates";
+import NewBuild from "./pages/NewBuild";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
-    <div id="top" className="min-h-screen bg-white">
-      <Navbar />
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          {/* =========================
+              PUBLIC ROUTES
+          ========================== */}
 
-      <main>
-        <Hero />
+          <Route path="/" element={<Home />} />
 
-        <ExamplePrompts />
+          <Route path="/login" element={<Login />} />
 
-        <BuildCategories />
+          <Route path="/signup" element={<Signup />} />
 
-        <HowItWorks />
+          <Route path="/templates" element={<Templates />} />
 
-        <Features />
+          {/* =========================
+              PROTECTED ROUTES
+          ========================== */}
 
-        <FinalCTA />
-      </main>
+          <Route element={<ProtectedRoute />}>
+            <Route
+              path="/dashboard"
+              element={<Dashboard />}
+            />
 
-      <Footer />
-    </div>
+            <Route
+              path="/dashboard/projects"
+              element={<Projects />}
+            />
+
+            <Route
+              path="/dashboard/settings"
+              element={<Settings />}
+            />
+
+            <Route
+              path="/new"
+              element={<NewBuild />}
+            />
+          </Route>
+
+          {/* =========================
+              FALLBACK
+          ========================== */}
+
+          <Route
+            path="*"
+            element={<Home />}
+          />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
